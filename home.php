@@ -133,7 +133,9 @@ $barbers = array(
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <!-- Custom Css -->
     <link rel="stylesheet" href="style.css">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap" rel="stylesheet">
     <!-- Font Families -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
@@ -550,6 +552,15 @@ $barbers = array(
         </div>
         <div class="w3-panel w3-black">
             <h4>Buzz Cut - $27- $37</h4>
+        </div>
+          <!-- Additional Information -->
+          <div class="w3-container w3-center" style="background-color: #fff4e6; padding: 48px;">
+            <div class="w3-card w3-padding w3-round-large" style="background-color: #fff4e6; max-width: 500px; margin: 0 auto;">
+                <h3 class="w3-text-black" style="font-family: 'Nunito', sans-serif; font-size: 28px; font-weight: bold;">Discover the Art of Barbering</h3>
+                <p class="w3-text-grey" style="font-family: 'Nunito', sans-serif; font-size: 16px; line-height: 1.5; margin-bottom: 24px;">At our barber shop, we take pride in delivering exceptional grooming services that leave you looking and feeling your best. Our experienced barbers are skilled in the latest techniques and use high-quality products to ensure superior results.</p>
+                <p class="w3-text-grey" style="font-family: 'Nunito', sans-serif; font-size: 16px; line-height: 1.5; margin-bottom: 24px;">Whether you're seeking a classic haircut, precise beard trimming, stylish hair trim, or a complete grooming experience with our haircut and shave package, we've got you covered. Our specialized services for kids make us a go-to destination for the whole family.</p>
+                <a href="#appointment-section" class="w3-button w3-black w3-round-large w3-margin-top" style="font-family: 'Arial', sans-serif; font-size: 18px; font-weight: bold;">Book an Appointment</a>
+            </div>
         </div>
     </div>
 </div>
