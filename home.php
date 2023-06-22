@@ -21,17 +21,17 @@ $barbers = array(
     array(
         "name" => "Michael",
         "phone" => "+256-700-282-652",
-        "email" => "michael@gmail.com"
+        "email" => "michaelbarber@gmail.com"
     ),
     array(
         "name" => "Sandra",
         "phone" => "+256-735-467-347",
-        "email" => "sandra@yahoo.com"
+        "email" => "sandrabarber@yahoo.com"
     ),
     array(
         "name" => "Caleb",
         "phone" => "+256-783-456-271",
-        "email" => "caleb@example.com"
+        "email" => "calebbarber@gmail.com"
     )
 );
 ?>
@@ -397,17 +397,20 @@ $barbers = array(
             <p>Phone: <?php echo $barbers[0]['phone']; ?></p>
             <p>Email: <?php echo $barbers[0]['email']; ?></p>
             <div class="rating">
-                <input type="radio" id="michael_star5" name="michael_rating" value="5" required>
-                <label for="michael_star5" title="5 stars"><i class="fas fa-star"></i></label>
-                <input type="radio" id="michael_star4" name="michael_rating" value="4">
-                <label for="michael_star4" title="4 stars"><i class="fas fa-star"></i></label>
-                <input type="radio" id="michael_star3" name="michael_rating" value="3">
-                <label for="michael_star3" title="3 stars"><i class="fas fa-star"></i></label>
-                <input type="radio" id="michael_star2" name="michael_rating" value="2">
-                <label for="michael_star2" title="2 stars"><i class="fas fa-star"></i></label>
-                <input type="radio" id="michael_star1" name="michael_rating" value="1">
-                <label for="michael_star1" title="1 star"><i class="fas fa-star"></i></label>
-            </div>
+    <input type="radio" id="michael_star5" name="michael_rating" value="5" required>
+    <label for="michael_star5" title="5 stars"><i class="fas fa-star"></i></label>
+    <input type="radio" id="michael_star4" name="michael_rating" value="4">
+    <label for="michael_star4" title="4 stars"><i class="fas fa-star"></i></label>
+    <input type="radio" id="michael_star3" name="michael_rating" value="3">
+    <label for="michael_star3" title="3 stars"><i class="fas fa-star"></i></label>
+    <input type="radio" id="michael_star2" name="michael_rating" value="2">
+    <label for="michael_star2" title="2 stars"><i class="fas fa-star"></i></label>
+    <input type="radio" id="michael_star1" name="michael_rating" value="1">
+    <label for="michael_star1" title="1 star"><i class="fas fa-star"></i></label>
+</div>
+<p id="michael-average-rating" style="font-size: 14px; color: #888; margin-top: 5px;">Average rating: 0 stars</p>
+
+
             <button type="submit" style="background-color: #4CAF50; color: white; border: none; padding: 8px 16px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin-top: 1rem; cursor: pointer; border-radius: 4px;">Submit</button>
             <div id="michael_rating_summary"></div>
         </form>
@@ -423,17 +426,21 @@ $barbers = array(
             <p>Phone: <?php echo $barbers[1]['phone']; ?></p>
             <p>Email: <?php echo $barbers[1]['email']; ?></p>
             <div class="rating">
-                <input type="radio" id="sandra_star5" name="sandra_rating" value="5" required>
-                <label for="sandra_star5" title="5 stars"><i class="fas fa-star"></i></label>
-                <input type="radio" id="sandra_star4" name="sandra_rating" value="4">
-                <label for="sandra_star4" title="4 stars"><i class="fas fa-star"></i></label>
-                <input type="radio" id="sandra_star3" name="sandra_rating" value="3">
-                <label for="sandra_star3" title="3 stars"><i class="fas fa-star"></i></label>
-                <input type="radio" id="sandra_star2" name="sandra_rating" value="2">
-                <label for="sandra_star2" title="2 stars"><i class="fas fa-star"></i></label>
-                <input type="radio" id="sandra_star1" name="sandra_rating" value="1">
-                <label for="sandra_star1" title="1 star"><i class="fas fa-star"></i></label>
-            </div>
+    <input type="radio" id="sandra_star5" name="sandra_rating" value="5" required>
+    <label for="sandra_star5" title="5 stars"><i class="fas fa-star"></i></label>
+    <input type="radio" id="sandra_star4" name="sandra_rating" value="4">
+    <label for="sandra_star4" title="4 stars"><i class="fas fa-star"></i></label>
+    <input type="radio" id="sandra_star3" name="sandra_rating" value="3">
+    <label for="sandra_star3" title="3 stars"><i class="fas fa-star"></i></label>
+    <input type="radio" id="sandra_star2" name="sandra_rating" value="2">
+    <label for="sandra_star2" title="2 stars"><i class="fas fa-star"></i></label>
+    <input type="radio" id="sandra_star1" name="sandra_rating" value="1">
+    <label for="sandra_star1" title="1 star"><i class="fas fa-star"></i></label>
+</div>
+<p id="sandra-average-rating" style="font-size: 14px; color: #888; margin-top: 5px;">Average rating: 0 stars</p>
+
+
+
             <button type="submit" style="background-color: #4CAF50; color: white; border: none; padding: 8px 16px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin-top: 1rem; cursor: pointer; border-radius: 4px;">Submit</button>
         </form>
     </div>
@@ -460,6 +467,9 @@ $barbers = array(
     <input type="radio" id="caleb_star1" name="caleb_rating" value="1">
     <label for="caleb_star1" title="1 star"><i class="fas fa-star"></i></label>
 </div>
+<p id="caleb-average-rating" style="font-size: 14px; color: #888; margin-top: 5px;">Average rating: 0 stars</p>
+
+
 
             <button type="submit" style="background-color: #4CAF50; color: white; border: none; padding: 8px 16px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin-top: 1rem; cursor: pointer; border-radius: 4px;">Submit</button>
         </form>
@@ -705,6 +715,97 @@ $barbers = array(
          description.style.display = 'none';
       }
    }
+
+   const michaelRatingStars = document.querySelectorAll('input[name="michael_rating"]');
+const sandraRatingStars = document.querySelectorAll('input[name="sandra_rating"]');
+const calebRatingStars = document.querySelectorAll('input[name="caleb_rating"]');
+
+const michaelAverageRatingElement = document.getElementById('michael-average-rating');
+const sandraAverageRatingElement = document.getElementById('sandra-average-rating');
+const calebAverageRatingElement = document.getElementById('caleb-average-rating');
+
+// Add event listeners to each rating star for Michael
+michaelRatingStars.forEach(star => {
+    star.addEventListener('change', calculateAverageRating);
+});
+
+// Add event listeners to each rating star for Sandra
+sandraRatingStars.forEach(star => {
+    star.addEventListener('change', calculateAverageRating);
+});
+
+// Add event listeners to each rating star for Caleb
+calebRatingStars.forEach(star => {
+    star.addEventListener('change', calculateAverageRating);
+});
+
+// Function to calculate and display the average rating for each barber
+function calculateAverageRating() {
+    let michaelTotalRating = 0;
+    let michaelSelectedCount = 0;
+    let sandraTotalRating = 0;
+    let sandraSelectedCount = 0;
+    let calebTotalRating = 0;
+    let calebSelectedCount = 0;
+
+    // Calculate total rating and count of selected stars for Michael
+    michaelRatingStars.forEach(star => {
+        if (star.checked) {
+            michaelTotalRating += parseInt(star.value);
+            michaelSelectedCount++;
+        }
+    });
+
+    // Calculate total rating and count of selected stars for Sandra
+    sandraRatingStars.forEach(star => {
+        if (star.checked) {
+            sandraTotalRating += parseInt(star.value);
+            sandraSelectedCount++;
+        }
+    });
+
+    // Calculate total rating and count of selected stars for Caleb
+    calebRatingStars.forEach(star => {
+        if (star.checked) {
+            calebTotalRating += parseInt(star.value);
+            calebSelectedCount++;
+        }
+    });
+
+    // Calculate the average rating for each barber
+    const michaelAverageRating = michaelSelectedCount > 0 ? michaelTotalRating / michaelSelectedCount : 0;
+    const sandraAverageRating = sandraSelectedCount > 0 ? sandraTotalRating / sandraSelectedCount : 0;
+    const calebAverageRating = calebSelectedCount > 0 ? calebTotalRating / calebSelectedCount : 0;
+
+    // Display the average rating for each barber
+    michaelAverageRatingElement.textContent = `Average rating: ${michaelAverageRating.toFixed(1)} stars`;
+    sandraAverageRatingElement.textContent = `Average rating: ${sandraAverageRating.toFixed(1)} stars`;
+    calebAverageRatingElement.textContent = `Average rating: ${calebAverageRating.toFixed(1)} stars`;
+}
+
+// Check if total rating and selected count exist in local storage and calculate the average ratings
+const storedMichaelTotalRating = localStorage.getItem('michaelTotalRating');
+const storedMichaelSelectedCount = localStorage.getItem('michaelSelectedCount');
+if (storedMichaelTotalRating && storedMichaelSelectedCount) {
+    const michaelAverageRating = storedMichaelSelectedCount > 0 ? storedMichaelTotalRating / storedMichaelSelectedCount : 0;
+    michaelAverageRatingElement.textContent = `Average rating: ${michaelAverageRating.toFixed(1)} stars`;
+}
+
+const storedSandraTotalRating = localStorage.getItem('sandraTotalRating');
+const storedSandraSelectedCount = localStorage.getItem('sandraSelectedCount');
+if (storedSandraTotalRating && storedSandraSelectedCount) {
+    const sandraAverageRating = storedSandraSelectedCount > 0 ? storedSandraTotalRating / storedSandraSelectedCount : 0;
+    sandraAverageRatingElement.textContent = `Average rating: ${sandraAverageRating.toFixed(1)} stars`;
+}
+
+const storedCalebTotalRating = localStorage.getItem('calebTotalRating');
+const storedCalebSelectedCount = localStorage.getItem('calebSelectedCount');
+if (storedCalebTotalRating && storedCalebSelectedCount) {
+    const calebAverageRating = storedCalebSelectedCount > 0 ? storedCalebTotalRating / storedCalebSelectedCount : 0;
+    calebAverageRatingElement.textContent = `Average rating: ${calebAverageRating.toFixed(1)} stars`;
+}
+
+
 
 </script>
 
