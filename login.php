@@ -62,26 +62,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body class="w3-sand">
 
 <div class="w3-top">
-        <div class="w3-row w3-padding w3-light-gray">
-            <div class="w3-col s2">
-                <a href="#" class="w3-button w3-block">
-                    <i class="fas fa-cut"></i>
-                </a>
-            </div>
-            <div class="w3-col s2">
-                <a href="#" class="w3-button w3-b w3-block">Home</a>
-            </div>
-            <div class="w3-col s2">
-                <a href="#" class="w3-button w3-b w3-block">Opening hours</a>
-            </div>
-            <div class="w3-col s2">
-                <a href="#" class="w3-button w3-b w3-block">Prices</a>
-            </div>
-            <div class="w3-col s2">
-                <a href="#" class="w3-button w3-b w3-block"><img src="login.gif" alt="Login Icon"></a>
-            </div>
-        </div>
+<div class="w3-row w3-padding w3-light-gray">
+    <div class="w3-col s3">
+        <a href="#" class="w3-button w3-block">
+            <i class="fas fa-cut"></i>
+        </a>
     </div>
+    <div class="w3-col s3">
+        <a href="#" class="w3-button w3-b w3-block">Home</a>
+    </div>
+    <div class="w3-col s3">
+        <a href="#" class="w3-button w3-b w3-block">Opening hours</a>
+    </div>
+    <div class="w3-col s3">
+        <a href="#" class="w3-button w3-b w3-block">Prices</a>
+    </div>
+</div>
+
+
 
     
    <!-- Login form HTML -->

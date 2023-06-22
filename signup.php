@@ -64,26 +64,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <!-- Navbar Section -->
 <div class="w3-top">
-    <div class="w3-row w3-padding w3-light-gray">
-        <div class="w3-col s2">
-            <a href="#" class="w3-button w3-block">
-                <i class="fas fa-cut"></i>
-            </a>
-        </div>
-        <div class="w3-col s2">
-            <a href="" class="w3-button w3-b w3-block">Home</a>
-        </div>
-        <div class="w3-col s2">
-            <a href="" class="w3-button w3-b w3-block">Opening hours</a>
-        </div>
-        <div class="w3-col s2">
-            <a href="" class="w3-button w3-b w3-block">Prices</a>
-        </div>
-        <div class="w3-col s2">
-            <a href="login.php" class="w3-button w3-b w3-block">Login/Register</a>
-        </div>
-        
+<div class="w3-row w3-padding w3-light-gray">
+    <div class="w3-col s3">
+        <a href="#" class="w3-button w3-block">
+            <i class="fas fa-cut"></i>
+        </a>
+    </div>
+    <div class="w3-col s3">
+        <a href="#" class="w3-button w3-b w3-block">Home</a>
+    </div>
+    <div class="w3-col s3">
+        <a href="#" class="w3-button w3-b w3-block">Opening hours</a>
+    </div>
+    <div class="w3-col s3">
+        <a href="#" class="w3-button w3-b w3-block">Prices</a>
+    </div>
 </div>
+
+</div>
+
 
 <!-- Signup form HTML -->
 <div style="margin-top: 60px;" class="signup-box">

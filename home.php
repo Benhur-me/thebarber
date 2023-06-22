@@ -185,7 +185,7 @@ $barbers = array(
 <!-- Image Section -->
 
 <!-- Slides -->
-<div class="w3-container w3-center w3-padding-64">
+<div id="home" class="w3-container w3-center w3-padding-64">
     <div class="w3-content w3-display-container">
         <img src="barber1.webp" alt="Slide 1" class="w3-image dark-image" style="width:100%; max-width:1000px; transition: filter 0.3s;">
         <img src="barber2.webp" alt="Slide 2" class="w3-image dark-image" style="width:100%; max-width:1000px; transition: filter 0.3s;">
@@ -535,24 +535,58 @@ $barbers = array(
 <div class="w3-container" id="price-section">
     <div class="w3-content w3-center" style="max-width:700px; font-weight: 600;">
         <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">SERVICE MENU</span></h5>
-        <div class="w3-panel w3-black">
-            <h4>Haircut - $50 - $60</h4>
+
+        <center><p style="font-size: 16px; color: #555; background-color: #f9f9f9; cursor: pointer; padding: 10px; border: 1px solid #ccc; border-radius: 4px; text-align: center; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">Click on the style names to see the descriptions.</p>
+</center>
+
+        <div class="w3-panel w3-black" onclick="toggleDescription('haircut')">
+            <h4 style="cursor: pointer;">Haircut - $50 - $60</h4>
         </div>
-        <div class="w3-panel w3-black">
-            <h4>Beard Trimming - $20 - $25</h4>
+
+    <div id="haircut-description" style="display: none;">
+        <img src="hairct.jpeg" alt="Haircut" width="200">
+        <p>The Haircut is a versatile style that involves trimming and shaping the hair to achieve a desired look. It can vary in length, texture, and design, catering to individual preferences. The price range for a Haircut is $50 to $60.</p>
+    </div>
+
+    <div class="w3-panel w3-black" onclick="toggleDescription('beard-trimming')">
+        <h4 style="cursor: pointer;">Beard Trimming - $20 - $25</h4>
+    </div>
+
+    <div id="beard-trimming-description" style="display: none;">
+        <img src="beardtrimming.jpeg" alt="Beard Trimming" width="200">
+        <p>Beard Trimming involves shaping and grooming the facial hair to maintain a neat and polished appearance. It helps to maintain a well-defined beard length and contour. The price range for Beard Trimming is $20 to $25.</p>
+    </div>
+
+        <div class="w3-panel w3-black" onclick="toggleDescription('kidscut')">
+            <h4 style="cursor: pointer;">Kid's Cut - $40 - $45</h4>
         </div>
-        <div class="w3-panel w3-black">
-            <h4>Hair Trim - $30 - $40</h4>
+
+        <div id="kidscut-description" style="display: none;">
+            <img src="kids.jpeg" alt="Kid's Cut" width="200">
+            <p>This is a specialized haircut service for kids aged 12 and below. Our experienced barbers provide a comfortable and fun haircut experience for children, ensuring they leave with a stylish look. The price range for Kid's Cut is $40 to $45.</p>
         </div>
-        <div class="w3-panel w3-black">
-            <h4>Kid's Cut - $40 - $45</h4>
+
+        <div id="kidscut-description" style="display: none;">
+            <p>This is a specialized haircut service for kids aged 12 and below. Our experienced barbers provide a comfortable and fun haircut experience for children, ensuring they leave with a stylish look. The price range for Kid's Cut is $40 to $45.</p>
         </div>
-        <div class="w3-panel w3-black">
-            <h4>Haircut & Shave - $120 - $150</h4>
+
+        <div class="w3-panel w3-black" onclick="toggleDescription('haircut-shave')">
+             <h4 style="cursor: pointer;">Haircut & Shave - $120 - $150</h4>
         </div>
-        <div class="w3-panel w3-black">
-            <h4>Buzz Cut - $27- $37</h4>
+
+        <div id="haircut-shave-description" style="display: none;">
+            <img src="shave.jpeg" alt="Haircut & Shave" width="200">
+            <p>Haircut & Shave is a combination service that includes both a stylish haircut and a traditional shave. It offers a complete grooming experience, providing a fresh haircut and a smooth, clean shave. The price range for Haircut & Shave is $120 to $150.</p>
         </div>
+
+        <div class="w3-panel w3-black" onclick="toggleDescription('buzzcut')">
+            <h4 style="cursor: pointer;">Buzz Cut - $27 - $37</h4>
+        </div>
+
+    <div id="buzzcut-description" style="display: none;">
+        <img src="buzz.jpeg" alt="Buzz Cut" width="200">
+        <p>The Buzz Cut is a short and low-maintenance hairstyle that involves cutting the hair very close to the scalp. It offers a clean and minimalist look, suitable for those who prefer a simple and easy-to-maintain style. The price range for the Buzz Cut is $27 to $37.</p>
+    </div>
           
         </div>
     </div>
@@ -655,8 +689,22 @@ $barbers = array(
     window.location.href = url;
   }
     
-  
-
+   // Toggle the visibility of the content and image for each section
+   function toggleContent(sectionId) {
+        const content = document.getElementById(sectionId + 'Content');
+        const image = content.querySelector('.item-image');
+        content.style.display = content.style.display === 'none' ? 'block' : 'none';
+        image.style.display = content.style.display === 'none' ? 'none' : 'block';
+    }
+    
+    function toggleDescription(elementId) {
+      var description = document.getElementById(elementId + '-description');
+      if (description.style.display === 'none') {
+         description.style.display = 'block';
+      } else {
+         description.style.display = 'none';
+      }
+   }
 
 </script>
 
