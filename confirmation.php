@@ -41,10 +41,10 @@
   $rating = $_GET['rating'];
   ?>
 
-  <h1>Thank you for rating to <?php echo $barberName; ?></h1>
+  <h1>Thank you for rating <?php echo $barberName; ?></h1>
   <p>Your rating:</p>
   
-  <div class="stars">
+  <!-- <div class="stars"> -->
     <?php
     for ($i = 1; $i <= $rating; $i++) {
       echo "★";
