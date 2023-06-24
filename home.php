@@ -45,6 +45,19 @@ $barbers = array(
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
+            overflow-x: hidden; /* Prevent horizontal scrolling */
+        }
+
+        .rating {
+            margin: 0
+            display: flex;
+            flex-wrap: nowrap; /* Ensure the rating stars stay in a single line */
+            overflow-x: auto; /* Enable horizontal scrolling for rating stars if needed */
+        }
+
+        .rating input[type="radio"],
+        .rating label {
+        flex-shrink: 0; /* Prevent the rating stars from shrinking */
         }
 
         /* Top Navigation */
@@ -124,6 +137,8 @@ $barbers = array(
         }
 
         
+
+        
     </style>
 
 <head>
@@ -147,25 +162,33 @@ $barbers = array(
 
     <!-- Navbar Section -->
     <div class="w3-top">
-        <div class="w3-row w3-padding w3-light-gray">
-            <div class="w3-col s2">
-                <a href="#" class="w3-button w3-block">
-                    <i class="fas fa-cut"></i>
-                </a>
-            </div>
-            <div class="w3-col s2">
+    <div class="w3-row w3-padding w3-light-gray">
+        <div class="w3-col s2">
+            <a href="#" class="w3-button w3-block">
+                <i class="fas fa-cut"></i>
+            </a>
+        </div>
+        <!-- Hamburger icon visible on small screens -->
+        <div class="w3-col s2 w3-hide-medium w3-hide-large">
+            <a href="#" class="w3-button w3-block" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </a>
+        </div>
+        <!-- Responsive menu -->
+        <div id="responsiveMenu" class="w3-hide w3-hide-medium w3-hide-large">
+            <div class="w3-col s12">
                 <a href="#home" class="w3-button w3-b w3-block">Home</a>
             </div>
-            <div class="w3-col s2">
+            <div class="w3-col s12">
                 <a href="#hour-section" class="w3-button w3-b w3-block">Opening hours</a>
             </div>
-            <div class="w3-col s2">
+            <div class="w3-col s12">
                 <a href="#price-section" class="w3-button w3-b w3-block">Prices</a>
             </div>
-            <div class="w3-col s2">
+            <div class="w3-col s12">
                 <a href="#appointment-section" class="w3-button w3-b w3-block">Book</a>
             </div>
-            <div class="w3-col s2">
+            <div class="w3-col s12">
                 <form method="POST" action="">
                     <button type="submit" name="logout" class="w3-button w3-b w3-block">
                         <img src="logout2.png" alt="logout icon">
@@ -173,7 +196,30 @@ $barbers = array(
                 </form>
             </div>
         </div>
+        <!-- Navigation menus visible on medium and large screens -->
+        <div class="w3-col m2 l2 w3-hide-small">
+            <a href="#home" class="w3-button w3-b w3-block">Home</a>
+        </div>
+        <div class="w3-col m2 l2 w3-hide-small">
+            <a href="#hour-section" class="w3-button w3-b w3-block">Opening hours</a>
+        </div>
+        <div class="w3-col m2 l2 w3-hide-small">
+            <a href="#price-section" class="w3-button w3-b w3-block">Prices</a>
+        </div>
+        <div class="w3-col m2 l2 w3-hide-small">
+            <a href="#appointment-section" class="w3-button w3-b w3-block">Book</a>
+        </div>
+        <div class="w3-col m2 l2 w3-hide-small">
+            <form method="POST" action="">
+                <button type="submit" name="logout" class="w3-button w3-b w3-block">
+                    <img src="logout2.png" alt="logout icon">
+                </button>
+            </form>
+        </div>
     </div>
+</div>
+
+
 
 
 <!-- To welcoming the user -->
@@ -487,13 +533,13 @@ $barbers = array(
 
 <!-- Call to Action Button -->
 <div class="call-to-action w3-center w3-padding-top-64">
-    <a href="#hour-section" style="font-size:30px;" class="w3-white w3-text-dark w3-btn w3-border">BOOK AN
+    <a href="#appointment-section" style="font-size:30px;" class="w3-white w3-text-dark w3-btn w3-border">BOOK AN
         APPOINTMENT</a>
 </div>
 
 <!-- Appointment Form Section -->
 <div class="w3-container w3-padding-64" id="appointment-section">
-    <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">BOOK AN APPOINTMENT</span></h5>
+    <!-- <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">BOOK AN APPOINTMENT</span></h5> -->
     <div class="w3-content w3-center" style="max-width: 500px; margin: 0 auto;">
         <form action="book_appointment.php" method="post">
             <div class="w3-row-padding w3-padding-large">
@@ -805,7 +851,15 @@ if (storedCalebTotalRating && storedCalebSelectedCount) {
     calebAverageRatingElement.textContent = `Average rating: ${calebAverageRating.toFixed(1)} stars`;
 }
 
+function toggleMenu() {
+        var menu = document.getElementById("responsiveMenu");
+        menu.classList.toggle("w3-hide");
+    }
 
+    function toggleMenu() {
+        var menu = document.getElementById("responsiveMenu");
+        menu.classList.toggle("w3-hide");
+    }
 
 </script>
 
