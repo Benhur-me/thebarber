@@ -111,6 +111,7 @@
             echo "<th>Hour</th>";
             echo "<th>Action</th>";
             echo "</tr>";
+       
             while ($row = $result->fetch_assoc()) {
                 echo "<tr>";
                 echo "<td>" . $row['name'] . "</td>";
@@ -121,18 +122,31 @@
                 echo "<td>";
                 echo "<form method='post' onsubmit='return confirm(\"Are you sure you want to delete this appointment?\");'>";
                 echo "<input type='hidden' name='delete_appointment' value='" . $row['id'] . "'>";
-                echo "<input type='submit' value='Delete'>";
+                echo "<button type='submit' name='submit_" . $row['id'] . "' value='" . $row['id'] . "'>Delete</button>";
                 echo "</form>";
                 echo "</td>";
                 echo "</tr>";
             }
-            echo "</table>";
-        } else {
-            echo " No appointments found.";
+            
+            // Process form submissions
+            if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['delete_appointment'])) {
+                $appointmentId = $_POST['delete_appointment'];
+            
+                // Delete the appointment from the database
+                $query = "DELETE FROM appointments WHERE id = ?";
+                $stmt = $conn->prepare($query);
+                $stmt->bind_param("i", $appointmentId);
+            
+                if ($stmt->execute()) {
+                    echo "";
+                } else {
+                    echo "Failed to delete the appointment.";
+                }
+            
+                $stmt->close();
+            }
+            
         }
-
-        // Close the connection
-        $conn->close();
         ?>
     </div>
 </body>

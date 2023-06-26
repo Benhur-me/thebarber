@@ -19,18 +19,37 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);  
 }
 
-// Prepare and execute the SQL statement to insert the appointment into the database
-$stmt = $conn->prepare("INSERT INTO appointments (name, email, phone, date, hour) VALUES (?, ?, ?, ?, ?)");
-$stmt->bind_param("sssss", $name, $email, $phone, $date, $hour);
+// Check if the selected time and date are already booked
+$stmt = $conn->prepare("SELECT * FROM appointments WHERE date = ? AND hour = ?");
+$stmt->bind_param("ss", $date, $hour);
+$stmt->execute();
+$result = $stmt->get_result();
 
-// Execute the SQL statement
-$result = $stmt->execute();
-
-// Check if the appointment was successfully booked
-if ($result) {
-    $successMessage = "You have successfully made an appointment. Thank you!";
+if ($result->num_rows > 0) {
+    // Appointment already exists for the selected time and date
+    $successMessage = "<span class='warning-text'>Sorry, the selected time and date are not available. Please choose another slot.</span>";
 } else {
-    $successMessage = "Sorry, an error occurred while processing your appointment. Please try again.";
+    // Check if the phone number is already used for an appointment
+    $stmt = $conn->prepare("SELECT * FROM appointments WHERE phone = ?");
+    $stmt->bind_param("s", $phone);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result->num_rows > 0) {
+        // Phone number is already used for an appointment
+        $successMessage = "<span class='warning-text'>Sorry, the phone number is already used for another appointment. Please provide a different phone number.</span>";
+    } else {
+        // The appointment is available, insert it into the database
+        $stmt = $conn->prepare("INSERT INTO appointments (name, email, phone, date, hour) VALUES (?, ?, ?, ?, ?)");
+        $stmt->bind_param("sssss", $name, $email, $phone, $date, $hour);
+        $result = $stmt->execute();
+
+        if ($result) {
+            $successMessage = "You have successfully made an appointment. Thank you!";
+        } else {
+            $successMessage = "Sorry, an error occurred while processing your appointment. Please try again.";
+        }
+    }
 }
 
 // Close the database connection
@@ -47,6 +66,10 @@ $conn->close();
         body {
             background-color: #f1f1f1;
             font-family: Arial, sans-serif;
+        }
+
+        .warning-text {
+            color: red;
         }
 
         .container {
@@ -84,11 +107,7 @@ $conn->close();
 <body>
     <div class="container">
         <h1>Appointment Confirmation</h1>
-        <?php if ($result) { ?>
-            <p class="success-message"><?php echo $successMessage; ?></p>
-        <?php } else { ?>
-            <p class="error-message"><?php echo $successMessage; ?></p>
-        <?php } ?>
+        <p class="<?php echo ($result) ? 'success-message' : 'error-message'; ?>"><?php echo $successMessage; ?></p>
     </div>
 </body>
 </html>

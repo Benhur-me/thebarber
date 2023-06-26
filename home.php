@@ -136,6 +136,45 @@ $barbers = array(
             filter: brightness(50%); /* Adjust the brightness value as desired */
         }
 
+        .login-box {
+       
+        text-align: center;
+        background-color: #f2f2f2;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .login-box h1 {
+        font-size: 24px;
+        margin-bottom: 10px;
+        color: #333;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .login-box p {
+        font-size: 18px;
+        color: #777;
+    }
+
+
+          /* Styles for small screens */
+    @media (max-width: 767px) {
+        .login-box {
+            margin-top: 30px;
+            padding: 15px;
+        }
+
+        .login-box h1 {
+            font-size: 20px;
+        }
+
+        .login-box p {
+            font-size: 16px;
+        }
+    }
         
 
         
@@ -154,6 +193,7 @@ $barbers = array(
     <!-- Font Families -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
         integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
 </head>
@@ -223,7 +263,7 @@ $barbers = array(
 
 
 <!-- To welcoming the user -->
-<div style="margin-top: 60px;" class="login-box">
+<div class="login-box" style=" margin-top: 90px;">
     <h1>Welcome, <?php echo $email; ?>!</h1>
     <p>You have successfully logged in.</p>
 </div>
@@ -243,6 +283,103 @@ $barbers = array(
     </div>
 </div>
 
+<!-- OUR BARBERS SECTION -->
+<div class="w3-sand w3-large" id="information">
+    <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">OUR BARBERS</span></h5>
+    <div class="w3-row-padding w3-padding-large">
+    <div class="w3-third w3-container w3-margin-bottom w3-hover-grayscale">
+    <div class="w3-container w3-center w3-black">
+        <div style="height: 100%; max-width: 170px; margin: 0 auto; padding: 2rem;">
+            <img src="https://images.unsplash.com/photo-1578176603894-57973e38890f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=580&q=80" class="w3-circle" alt="barber" style="width: 100%; height: 100%;">
+        </div>
+        <form id="michael_rating_form" action="rating.php" method="post">
+            <p><b>Michael</b> (owner)</p>
+            <p>Phone: <?php echo $barbers[0]['phone']; ?></p>
+            <p>Email: <?php echo $barbers[0]['email']; ?></p>
+            <div class="rating">
+    <input type="radio" id="michael_star5" name="michael_rating" value="5" required>
+    <label for="michael_star5" title="5 stars"><i class="fas fa-star"></i></label>
+    <input type="radio" id="michael_star4" name="michael_rating" value="4">
+    <label for="michael_star4" title="4 stars"><i class="fas fa-star"></i></label>
+    <input type="radio" id="michael_star3" name="michael_rating" value="3">
+    <label for="michael_star3" title="3 stars"><i class="fas fa-star"></i></label>
+    <input type="radio" id="michael_star2" name="michael_rating" value="2">
+    <label for="michael_star2" title="2 stars"><i class="fas fa-star"></i></label>
+    <input type="radio" id="michael_star1" name="michael_rating" value="1">
+    <label for="michael_star1" title="1 star"><i class="fas fa-star"></i></label>
+</div>
+<p id="michael-average-rating" style="font-size: 14px; color: #888; margin-top: 5px;">Average rating: 0 stars</p>
+
+
+            <button type="submit" style="background-color: #4CAF50; color: white; border: none; padding: 8px 16px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin-top: 1rem; cursor: pointer; border-radius: 4px;">Submit</button>
+            <div id="michael_rating_summary"></div>
+        </form>
+    </div>
+</div>
+<div class="w3-third w3-container w3-margin-bottom w3-hover-grayscale">
+    <div class="w3-container w3-center w3-black">
+        <div style="height: 100%; max-width: 170px; margin: 0 auto; padding: 2rem;">
+            <img src="https://images.unsplash.com/photo-1597223557154-721c1cecc4b0?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8ZmFjZXxlbnwwfDJ8MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" class="w3-circle" alt="barber" style="width: 100%; height: 100%;">
+        </div>
+        <form id="sandra_rating_form" action="rating.php" method="post">
+            <p><b>Sandra</b></p>
+            <p>Phone: <?php echo $barbers[1]['phone']; ?></p>
+            <p>Email: <?php echo $barbers[1]['email']; ?></p>
+            <div class="rating">
+    <input type="radio" id="sandra_star5" name="sandra_rating" value="5" required>
+    <label for="sandra_star5" title="5 stars"><i class="fas fa-star"></i></label>
+    <input type="radio" id="sandra_star4" name="sandra_rating" value="4">
+    <label for="sandra_star4" title="4 stars"><i class="fas fa-star"></i></label>
+    <input type="radio" id="sandra_star3" name="sandra_rating" value="3">
+    <label for="sandra_star3" title="3 stars"><i class="fas fa-star"></i></label>
+    <input type="radio" id="sandra_star2" name="sandra_rating" value="2">
+    <label for="sandra_star2" title="2 stars"><i class="fas fa-star"></i></label>
+    <input type="radio" id="sandra_star1" name="sandra_rating" value="1">
+    <label for="sandra_star1" title="1 star"><i class="fas fa-star"></i></label>
+</div>
+<p id="sandra-average-rating" style="font-size: 14px; color: #888; margin-top: 5px;">Average rating: 0 stars</p>
+
+
+
+            <button type="submit" style="background-color: #4CAF50; color: white; border: none; padding: 8px 16px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin-top: 1rem; cursor: pointer; border-radius: 4px;">Submit</button>
+        </form>
+    </div>
+</div>
+
+<div class="w3-third w3-container w3-margin-bottom w3-hover-grayscale">
+    <div class="w3-container w3-center w3-black">
+        <div style="height: 100%; max-width: 170px; margin: 0 auto; padding: 2rem;">
+            <img src="https://images.unsplash.com/photo-1595152452543-e5fc28ebc2b8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=580&q=80" class="w3-circle" alt="barber" style="width: 100%; height: 100%;">
+        </div>
+        <form id="caleb_rating_form" action="rating.php" method="post">
+            <p><b>Caleb</b></p>
+            <p>Phone: <?php echo $barbers[2]['phone']; ?></p>
+            <p>Email: <?php echo $barbers[2]['email']; ?></p>
+            <div class="rating">
+    <input type="radio" id="caleb_star5" name="caleb_rating" value="5" required>
+    <label for="caleb_star5" title="5 stars"><i class="fas fa-star"></i></label>
+    <input type="radio" id="caleb_star4" name="caleb_rating" value="4">
+    <label for="caleb_star4" title="4 stars"><i class="fas fa-star"></i></label>
+    <input type="radio" id="caleb_star3" name="caleb_rating" value="3">
+    <label for="caleb_star3" title="3 stars"><i class="fas fa-star"></i></label>
+    <input type="radio" id="caleb_star2" name="caleb_rating" value="2">
+    <label for="caleb_star2" title="2 stars"><i class="fas fa-star"></i></label>
+    <input type="radio" id="caleb_star1" name="caleb_rating" value="1">
+    <label for="caleb_star1" title="1 star"><i class="fas fa-star"></i></label>
+</div>
+<p id="caleb-average-rating" style="font-size: 14px; color: #888; margin-top: 5px;">Average rating: 0 stars</p>
+
+
+
+            <button type="submit" style="background-color: #4CAF50; color: white; border: none; padding: 8px 16px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin-top: 1rem; cursor: pointer; border-radius: 4px;">Submit</button>
+        </form>
+    </div>
+</div>
+
+</div>
+
+    </div>
+</div>
 
 <!-- Barber Shop Information Section -->
 <h5 class="w3-center w3-padding-48" id="hour-section"><span class="w3-tag w3-wide">SHOP INFORMATION</span></h5>
@@ -427,105 +564,16 @@ $barbers = array(
         border-radius: 4px;
     }
 
+    .sticky-button {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+    }
+
     </style>
 </head>
 <body>
-<div class="w3-sand w3-large" id="information">
-    <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">OUR BARBERS</span></h5>
-    <div class="w3-row-padding w3-padding-large">
-    <div class="w3-third w3-container w3-margin-bottom w3-hover-grayscale">
-    <div class="w3-container w3-center w3-black">
-        <div style="height: 100%; max-width: 170px; margin: 0 auto; padding: 2rem;">
-            <img src="https://images.unsplash.com/photo-1578176603894-57973e38890f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=580&q=80" class="w3-circle" alt="barber" style="width: 100%; height: 100%;">
-        </div>
-        <form id="michael_rating_form" action="rating.php" method="post">
-            <p><b>Michael</b> (owner)</p>
-            <p>Phone: <?php echo $barbers[0]['phone']; ?></p>
-            <p>Email: <?php echo $barbers[0]['email']; ?></p>
-            <div class="rating">
-    <input type="radio" id="michael_star5" name="michael_rating" value="5" required>
-    <label for="michael_star5" title="5 stars"><i class="fas fa-star"></i></label>
-    <input type="radio" id="michael_star4" name="michael_rating" value="4">
-    <label for="michael_star4" title="4 stars"><i class="fas fa-star"></i></label>
-    <input type="radio" id="michael_star3" name="michael_rating" value="3">
-    <label for="michael_star3" title="3 stars"><i class="fas fa-star"></i></label>
-    <input type="radio" id="michael_star2" name="michael_rating" value="2">
-    <label for="michael_star2" title="2 stars"><i class="fas fa-star"></i></label>
-    <input type="radio" id="michael_star1" name="michael_rating" value="1">
-    <label for="michael_star1" title="1 star"><i class="fas fa-star"></i></label>
-</div>
-<p id="michael-average-rating" style="font-size: 14px; color: #888; margin-top: 5px;">Average rating: 0 stars</p>
 
-
-            <button type="submit" style="background-color: #4CAF50; color: white; border: none; padding: 8px 16px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin-top: 1rem; cursor: pointer; border-radius: 4px;">Submit</button>
-            <div id="michael_rating_summary"></div>
-        </form>
-    </div>
-</div>
-<div class="w3-third w3-container w3-margin-bottom w3-hover-grayscale">
-    <div class="w3-container w3-center w3-black">
-        <div style="height: 100%; max-width: 170px; margin: 0 auto; padding: 2rem;">
-            <img src="https://images.unsplash.com/photo-1597223557154-721c1cecc4b0?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8ZmFjZXxlbnwwfDJ8MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" class="w3-circle" alt="barber" style="width: 100%; height: 100%;">
-        </div>
-        <form id="sandra_rating_form" action="rating.php" method="post">
-            <p><b>Sandra</b></p>
-            <p>Phone: <?php echo $barbers[1]['phone']; ?></p>
-            <p>Email: <?php echo $barbers[1]['email']; ?></p>
-            <div class="rating">
-    <input type="radio" id="sandra_star5" name="sandra_rating" value="5" required>
-    <label for="sandra_star5" title="5 stars"><i class="fas fa-star"></i></label>
-    <input type="radio" id="sandra_star4" name="sandra_rating" value="4">
-    <label for="sandra_star4" title="4 stars"><i class="fas fa-star"></i></label>
-    <input type="radio" id="sandra_star3" name="sandra_rating" value="3">
-    <label for="sandra_star3" title="3 stars"><i class="fas fa-star"></i></label>
-    <input type="radio" id="sandra_star2" name="sandra_rating" value="2">
-    <label for="sandra_star2" title="2 stars"><i class="fas fa-star"></i></label>
-    <input type="radio" id="sandra_star1" name="sandra_rating" value="1">
-    <label for="sandra_star1" title="1 star"><i class="fas fa-star"></i></label>
-</div>
-<p id="sandra-average-rating" style="font-size: 14px; color: #888; margin-top: 5px;">Average rating: 0 stars</p>
-
-
-
-            <button type="submit" style="background-color: #4CAF50; color: white; border: none; padding: 8px 16px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin-top: 1rem; cursor: pointer; border-radius: 4px;">Submit</button>
-        </form>
-    </div>
-</div>
-
-<div class="w3-third w3-container w3-margin-bottom w3-hover-grayscale">
-    <div class="w3-container w3-center w3-black">
-        <div style="height: 100%; max-width: 170px; margin: 0 auto; padding: 2rem;">
-            <img src="https://images.unsplash.com/photo-1595152452543-e5fc28ebc2b8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=580&q=80" class="w3-circle" alt="barber" style="width: 100%; height: 100%;">
-        </div>
-        <form id="caleb_rating_form" action="rating.php" method="post">
-            <p><b>Caleb</b></p>
-            <p>Phone: <?php echo $barbers[2]['phone']; ?></p>
-            <p>Email: <?php echo $barbers[2]['email']; ?></p>
-            <div class="rating">
-    <input type="radio" id="caleb_star5" name="caleb_rating" value="5" required>
-    <label for="caleb_star5" title="5 stars"><i class="fas fa-star"></i></label>
-    <input type="radio" id="caleb_star4" name="caleb_rating" value="4">
-    <label for="caleb_star4" title="4 stars"><i class="fas fa-star"></i></label>
-    <input type="radio" id="caleb_star3" name="caleb_rating" value="3">
-    <label for="caleb_star3" title="3 stars"><i class="fas fa-star"></i></label>
-    <input type="radio" id="caleb_star2" name="caleb_rating" value="2">
-    <label for="caleb_star2" title="2 stars"><i class="fas fa-star"></i></label>
-    <input type="radio" id="caleb_star1" name="caleb_rating" value="1">
-    <label for="caleb_star1" title="1 star"><i class="fas fa-star"></i></label>
-</div>
-<p id="caleb-average-rating" style="font-size: 14px; color: #888; margin-top: 5px;">Average rating: 0 stars</p>
-
-
-
-            <button type="submit" style="background-color: #4CAF50; color: white; border: none; padding: 8px 16px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin-top: 1rem; cursor: pointer; border-radius: 4px;">Submit</button>
-        </form>
-    </div>
-</div>
-
-</div>
-
-    </div>
-</div>
 </body>
 </html>
 
@@ -537,55 +585,7 @@ $barbers = array(
         APPOINTMENT</a>
 </div>
 
-<!-- Appointment Form Section -->
-<div class="w3-container w3-padding-64" id="appointment-section">
-    <!-- <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">BOOK AN APPOINTMENT</span></h5> -->
-    <div class="w3-content w3-center" style="max-width: 500px; margin: 0 auto;">
-        <form action="book_appointment.php" method="post">
-            <div class="w3-row-padding w3-padding-large">
-                <div class="w3-half w3-container">
-                    <input class="w3-input w3-border" type="text" placeholder="Name" name="name" required>
-                </div>
-                <div class="w3-half w3-container">
-                    <input class="w3-input w3-border" type="email" placeholder="Email" name="email" required>
-                </div>
-            </div>
-            <div class="w3-row-padding w3-padding-large">
-                <div class="w3-half w3-container">
-                    <input class="w3-input w3-border" type="tel" placeholder="Phone" name="phone" required>
-                </div>
-                <div class="w3-half w3-container">
-                    <input class="w3-input w3-border" type="date" placeholder="Date" name="date" required>
-                </div>
-            </div>
-            <div class="w3-row-padding w3-padding-large">
-                <div class="w3-container">
-                    <select class="w3-select w3-border" name="hour" required>
-                        <option value="" disabled selected>Select Hour</option>
-                        <option value="8:00am">8:00am</option>
-                        <option value="9:00am">9:00am</option>
-                        <option value="10:00am">10:00am</option>
-                        <option value="10:00am">11:00am</option>
-                        <option value="10:00am">12:00pm</option>
-                        <option value="10:00am">01:00pm</option>
-                        <option value="10:00am">02:00pm</option>
-                        <option value="10:00am">03:00pm</option>
-                        <option value="10:00am">04:00pm</option>
-                        <option value="10:00am">05:00pm</option>
-                        <option value="10:00am">06:00pm</option>
-                        <option value="10:00am">07:00pm</option>
-                        <!-- Add more options as needed -->
-                    </select>
-                </div>
-            </div>
-            <div class="w3-row-padding w3-padding-large">
-                <div class="w3-container">
-                    <button type="submit" class="w3-button w3-black w3-round-large">Book Appointment</button>
-                </div>
-            </div>
-        </form>
-    </div>
-</div>
+
 
 <!-- Pricing Section-->
 <div class="w3-container" id="price-section">
@@ -647,6 +647,66 @@ $barbers = array(
         </div>
     </div>
 </div>
+
+<!-- Appointment Form Section -->
+<div class="w3-container w3-padding-64" id="appointment-section">
+    <!-- <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">BOOK AN APPOINTMENT</span></h5> -->
+    <div class="w3-content w3-center" style="max-width: 500px; margin: 0 auto;">
+        <form action="book_appointment.php" method="post">
+            <div class="w3-row-padding w3-padding-large">
+                <div class="w3-half w3-container">
+                    <input class="w3-input w3-border" type="text" placeholder="Name" name="name" required>
+                </div>
+                <div class="w3-half w3-container">
+                    <input class="w3-input w3-border" type="email" placeholder="Email" name="email" required>
+                </div>
+            </div>
+            <div class="w3-row-padding w3-padding-large">
+                <div class="w3-half w3-container">
+                    <input class="w3-input w3-border" type="tel" placeholder="Phone" name="phone" required>
+                </div>
+                <div class="w3-half w3-container">
+                    <input class="w3-input w3-border" type="date" placeholder="Date" name="date" required>
+                </div>
+            </div>
+            <div class="w3-row-padding w3-padding-large">
+                <div class="w3-container">
+                    <select class="w3-select w3-border" name="hour" required>
+                        <option value="" disabled selected>Select Hour</option>
+                        <option value="8:00am">8:00am</option>
+                        <option value="9:00am">9:00am</option>
+                        <option value="10:00am">10:00am</option>
+                        <option value="11:00am">11:00am</option>
+                        <option value="12:00pm">12:00pm</option>
+                        <option value="01:00pm">01:00pm</option>
+                        <option value="02:00pm">02:00pm</option>
+                        <option value="03:00pm">03:00pm</option>
+                        <option value="04:00pm">04:00pm</option>
+                        <option value="05:00pm">05:00pm</option>
+                        <option value="06:00pm">06:00pm</option>
+                        <option value="07:00pm">07:00pm</option>
+                        <!-- Add more options as needed -->
+                    </select>
+                </div>
+            </div>
+            <div class="w3-row-padding w3-padding-large">
+                <div class="w3-container">
+                    <button type="submit" class="w3-button w3-black w3-round-large">Book Appointment</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <!-- Add refresh button for small screens or responsive layout -->
+   
+    <div class="sticky-button">
+    <a class="w3-button w3-green w3-round-large w3-hide-large w3-hide-medium" id="refresh-icon">
+        <i class="fas fa-sync-alt"></i> <!-- Font Awesome refresh icon -->
+    </a>
+</div>
+
+
+</div>
+
 
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#273036" fill-opacity="1" d="M0,192L48,186.7C96,181,192,171,288,186.7C384,203,480,245,576,250.7C672,256,768,224,864,197.3C960,171,1056,149,1152,154.7C1248,160,1344,192,1392,208L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
 <footer class="w3-container w3-center w3-padding-16 w3-light-gray">
@@ -860,6 +920,10 @@ function toggleMenu() {
         var menu = document.getElementById("responsiveMenu");
         menu.classList.toggle("w3-hide");
     }
+
+    document.getElementById('refresh-icon').addEventListener('click', function() {
+        window.location.reload();
+    });
 
 </script>
 
