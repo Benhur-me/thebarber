@@ -189,6 +189,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <a href="#price-section" class="w3-button w3-b w3-block">Prices</a>
                 </div>
                 
+                
+                
             </div>
             <!-- Responsive menu -->
             <div id="responsiveMenu" class="w3-hide w3-hide-medium w3-hide-large">
@@ -233,12 +235,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
    <!-- Rest of your content goes here -->
-
-</body>
-</html>
-
-
-   <div class="w3-container">
+   <div class="w3-container" style="margin-top: 30px">
       <!-- Login form HTML -->
       <div class="w3-container login-box">
          <h1>Login</h1>
@@ -250,7 +247,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <input type="email" id="email" name="email" required>
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" required>
-            <input type="submit" value="Submit">
+            <input type="submit" value="Submit"><br>
             <a href="signup.php">Don't have an account? Sign up</a>
          </form>
       </div>

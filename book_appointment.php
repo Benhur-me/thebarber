@@ -29,15 +29,15 @@ if ($result->num_rows > 0) {
     // Appointment already exists for the selected time and date
     $successMessage = "<span class='warning-text'>Sorry, the selected time and date are not available. Please choose another slot.</span>";
 } else {
-    // Check if the phone number is already used for an appointment
-    $stmt = $conn->prepare("SELECT * FROM appointments WHERE phone = ?");
-    $stmt->bind_param("s", $phone);
+    // Check if the email or phone number is already used for an appointment
+    $stmt = $conn->prepare("SELECT * FROM appointments WHERE email = ? OR phone = ?");
+    $stmt->bind_param("ss", $email, $phone);
     $stmt->execute();
     $result = $stmt->get_result();
 
     if ($result->num_rows > 0) {
-        // Phone number is already used for an appointment
-        $successMessage = "<span class='warning-text'>Sorry, the phone number is already used for another appointment. Please provide a different phone number.</span>";
+        // Email or phone number is already used for an appointment
+        $successMessage = "<span class='warning-text'>Sorry, the email or phone number is already used for another appointment. Please provide different contact details.</span>";
     } else {
         // The appointment is available, insert it into the database
         $stmt = $conn->prepare("INSERT INTO appointments (name, email, phone, date, hour) VALUES (?, ?, ?, ?, ?)");
@@ -102,10 +102,27 @@ $conn->close();
             color: red;
             font-weight: bold;
         }
+        .go_back{
+            border: px solid black;
+            margin: 0 auto;
+            padding: 15px;
+            margin-left: 190px;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            border-radius: 5px;
+            background: #f1f1f1;
+        }
+        .go_back:hover{
+            background: blue;
+            color: #fff;
+            border-radius: 5px;
+        }
     </style>
 </head>
 <body>
     <div class="container">
+        <a class="go_back" href="home.php">Go back</a>
         <h1>Appointment Confirmation</h1>
         <p class="<?php echo ($result) ? 'success-message' : 'error-message'; ?>"><?php echo $successMessage; ?></p>
     </div>

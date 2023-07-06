@@ -315,11 +315,11 @@ $barbers = array(
             <div id="michael_rating_summary"></div>
         </form>
     </div>
-</div>
+</div>]
 <div class="w3-third w3-container w3-margin-bottom w3-hover-grayscale">
     <div class="w3-container w3-center w3-black">
         <div style="height: 100%; max-width: 170px; margin: 0 auto; padding: 2rem;">
-            <img src="https://images.unsplash.com/photo-1597223557154-721c1cecc4b0?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8ZmFjZXxlbnwwfDJ8MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" class="w3-circle" alt="barber" style="width: 100%; height: 100%;">
+        <img src="https://images.unsplash.com/photo-1578176603894-57973e38890f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=580&q=80" class="w3-circle" alt="barber" style="width: 100%; height: 100%;">
         </div>
         <form id="sandra_rating_form" action="rating.php" method="post">
             <p><b>Sandra</b></p>
